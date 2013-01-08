@@ -3,7 +3,6 @@
 	<name>DataStorageTW</name>
 	<comment></comment>
 	<projects>
-		<project>mason-project</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
