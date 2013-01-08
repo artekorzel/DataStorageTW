@@ -26,7 +26,8 @@ public class FileSender implements Steppable {
 		for (int x = 0, width = cds.getWidth(); x < width; ++x) {
 			for (int y = 0, height = cds.getHeight(); y < height; ++y) {
 				d = (Device) tempGrid.field[x][y];
-				plannedPercentage = d.getPlannedCurrentValue() / (double)d.getInitialValue();
+				plannedPercentage = d.getPlannedCurrentValue()
+						/ (double) d.getInitialValue();
 				if (plannedPercentage > max
 						&& d.getPlannedCurrentValue() >= currentFileSize) {
 					max = plannedPercentage;
@@ -38,9 +39,10 @@ public class FileSender implements Steppable {
 
 		if (max != -1.0) {
 			d = (Device) cds.space.field[maxX][maxY];
-			d.setPlannedCurrentValue(d.getPlannedCurrentValue() - currentFileSize);
-			d.queue.offer(new SaveRequest(currentFileSize, 
-					cds.schedule.getSteps()));
+			d.setPlannedCurrentValue(d.getPlannedCurrentValue()
+					- currentFileSize);
+			d.queue.offer(new SaveRequest(currentFileSize, cds.schedule
+					.getSteps()));
 		}
 	}
 }

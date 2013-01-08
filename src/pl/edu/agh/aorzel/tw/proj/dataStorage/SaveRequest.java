@@ -3,7 +3,7 @@ package pl.edu.agh.aorzel.tw.proj.dataStorage;
 public class SaveRequest {
 	private int fileSize;
 	private long step;
-	
+
 	public SaveRequest(int fileSize, long step) {
 		this.fileSize = fileSize;
 		this.step = step;
